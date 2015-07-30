@@ -54,6 +54,13 @@
     self.sections = [self getSectionArray];
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setOneSectionAlwaysOpen:TRUE];
+    self.defaultOpenSection=2;
+
+}
+
 - (void)setupAppearence
 {
     [self setHeaderHeight:50];

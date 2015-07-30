@@ -28,20 +28,26 @@
 
 @required
 
-- (NSInteger)numberOfSectionsInAccordionTableViewController:(KMAccordionTableViewController *)accordionTableView;
+- (NSInteger)numberOfSectionsInAccordionTableViewController:
+    (KMAccordionTableViewController *)accordionTableView;
 
-- (KMSection *)accordionTableView:(KMAccordionTableViewController *)accordionTableView sectionForRowAtIndex:(NSInteger)index;
+- (KMSection *)accordionTableView:
+                   (KMAccordionTableViewController *)accordionTableView
+             sectionForRowAtIndex:(NSInteger)index;
 
-- (CGFloat)accordionTableView:(KMAccordionTableViewController *)accordionTableView heightForSectionAtIndex:(NSInteger)index;
+- (CGFloat)accordionTableView:
+               (KMAccordionTableViewController *)accordionTableView
+      heightForSectionAtIndex:(NSInteger)index;
 
 @optional
 
-- (UITableViewRowAnimation)accordionTableViewOpenAnimation:(KMAccordionTableViewController *)accordionTableView;
+- (UITableViewRowAnimation)accordionTableViewOpenAnimation:
+    (KMAccordionTableViewController *)accordionTableView;
 
-- (UITableViewRowAnimation)accordionTableViewCloseAnimation:(KMAccordionTableViewController *)accordionTableView;
+- (UITableViewRowAnimation)accordionTableViewCloseAnimation:
+    (KMAccordionTableViewController *)accordionTableView;
 
 @end
-
 
 @interface KMAccordionTableViewController : UITableViewController
 
@@ -53,18 +59,20 @@
 /**
  Sets AccordionTableView's delegate.
  */
-@property(nonatomic, assign) id <KMAccordionTableViewControllerDelegate> delegate;
+@property(nonatomic, assign)
+    id<KMAccordionTableViewControllerDelegate> delegate;
 
 /**
  Sets AccordionTableView's datasource.
  */
-@property(nonatomic, assign) id <KMAccordionTableViewControllerDataSource> dataSource;
+@property(nonatomic, assign)
+    id<KMAccordionTableViewControllerDataSource> dataSource;
 
 /**
  Sets section's view.
  */
 @property(nonatomic, strong) KMAppearence *sectionAppearence;
-@property (nonatomic) NSInteger openedSectionIndex;
+@property(nonatomic) NSInteger openedSectionIndex;
 
 /**
  Sets section at index.
@@ -115,5 +123,10 @@
  Sets if one section will always be open.
  */
 - (void)setOneSectionAlwaysOpen:(BOOL)isOpen;
+
+/**
+ Sets if want to open a default section when first load
+*/
+@property(nonatomic, assign) NSInteger defaultOpenSection;
 
 @end
